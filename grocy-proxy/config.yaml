@@ -1,0 +1,27 @@
+name: Grocy Proxy
+version: 1.0.0
+slug: grocy_proxy
+description: Proxy for an externally running Grocy instance
+url: https://github.com/Wheemer/hassio-grocy-proxy/tree/main/grocy-proxy
+arch:
+  - aarch64
+  - amd64
+startup: services
+boot: auto
+init: true
+ingress: true
+ingress_port: 8099
+ingress_stream: true
+panel_icon: mdi:cart
+panel_title: Grocy
+timeout: 30
+ports:
+  8099/tcp: null
+ports_description:
+  8099/tcp: Internal Grocy proxy port used by Home Assistant ingress
+options:
+  server: null
+  grocy_api_key: ""
+schema:
+  server: url
+  grocy_api_key: str?
